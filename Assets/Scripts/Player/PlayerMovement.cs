@@ -4,23 +4,24 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float gravityValue = -9.81f;
     private Transform playerOrientation;
     private Camera cam;
     [SerializeField] private float CamOffset = 0.5f;
+    [SerializeField] private MainTimerManager mainTimerManager;
 
     private void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
         playerOrientation = gameObject.GetComponent<Transform>();
         cam = Camera.main;
+        mainTimerManager = mainTimerManager.GetComponent<MainTimerManager>();
     }
 
     void Update()
     {
-        if (groundedPlayer && playerVelocity.y < 0)
+        if (playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
@@ -43,6 +44,16 @@ public class PlayerMovement : MonoBehaviour
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "TimerEntrance")
+        {
+            Debug.Log("TimerEntrance");
+            gameObject.SetActive(false);
+            mainTimerManager.TimerEntrance();
+        }
+        Debug.Log(other.gameObject.name);
     }
 
 }
