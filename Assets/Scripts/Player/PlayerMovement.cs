@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (playerVelocity.y < 0)
+        if (controller.isGrounded)
         {
             playerVelocity.y = 0f;
         }

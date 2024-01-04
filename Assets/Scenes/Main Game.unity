@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 7715349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 2.1, z: 20}
+  m_LocalPosition: {x: 10, y: 1.08, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -282,10 +282,9 @@ MonoBehaviour:
   - {fileID: 1792161413}
   - {fileID: 665898991}
   - {fileID: 2085966567}
-  - {fileID: 2085966567}
+  - {fileID: 692405798}
   camAnch: {fileID: 87925723}
   timerDuation: 1
-  perc: 0
 --- !u!1 &82762194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2117,10 @@ MonoBehaviour:
   - {fileID: 7715350}
   oldAnchors:
   - {fileID: 87925723}
+  perc: 0
+  timer: 0
   timerDuation: 2
+  player: {fileID: 2124223275}
 --- !u!4 &1714131387
 Transform:
   m_ObjectHideFlags: 0

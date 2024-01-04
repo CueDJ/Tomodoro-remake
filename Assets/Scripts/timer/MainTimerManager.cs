@@ -13,7 +13,7 @@ public class MainTimerManager : MonoBehaviour
     private quaternion oldCamRot;
     private float timer = 0f;
     [SerializeField] private float timerDuation = 1f;
-    [SerializeField] private float perc = 0f;
+    private float perc = 0f;
 
     private void Start()
     {
@@ -36,6 +36,7 @@ public class MainTimerManager : MonoBehaviour
 
         cam.GetComponent<PlayerRotation>().enabled = false;
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         moveCam = true;
     }
 
@@ -57,6 +58,13 @@ public class MainTimerManager : MonoBehaviour
             }
         }
     }
-
+    public void Return()
+    {
+        foreach (Button button in buttons)
+        {
+            button.interactable = false;
+        }
+        GameObject.Find("GameManager").GetComponent<Helper>().ReturnFromMenu("Timer");
+    }
 
 }
