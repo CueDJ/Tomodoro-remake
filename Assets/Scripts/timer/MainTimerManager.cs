@@ -6,7 +6,7 @@ public class MainTimerManager : MonoBehaviour
 {
     public Transform playerPos;
     [SerializeField] private Button[] buttons = new Button[7];
-    private new Camera camera;
+    private Camera cam;
     [SerializeField] private Transform camAnch;
     private bool moveCam = false;
     private Vector3 oldCamVec;
@@ -21,7 +21,7 @@ public class MainTimerManager : MonoBehaviour
         {
             button.interactable = false;
         }
-        camera = Camera.main;
+        cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
     }
     public void TimerEntrance()
@@ -31,10 +31,10 @@ public class MainTimerManager : MonoBehaviour
 
     private void MoveCamToAnchor()
     {
-        oldCamVec = camera.transform.position;
-        oldCamRot = camera.transform.rotation;
+        oldCamVec = cam.transform.position;
+        oldCamRot = cam.transform.rotation;
 
-        camera.GetComponent<PlayerRotation>().enabled = false;
+        cam.GetComponent<PlayerRotation>().enabled = false;
         Cursor.lockState = CursorLockMode.Confined;
         moveCam = true;
     }
@@ -45,8 +45,8 @@ public class MainTimerManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             perc = timer / timerDuation;
-            camera.transform.SetPositionAndRotation(Vector3.Lerp(oldCamVec, camAnch.position, perc), Quaternion.Lerp(oldCamRot, camAnch.rotation, perc));
-            if (timer >= 1f)
+            cam.transform.SetPositionAndRotation(Vector3.Lerp(oldCamVec, camAnch.position, perc), Quaternion.Lerp(oldCamRot, camAnch.rotation, perc));
+            if (timer >= timerDuation)
             {
                 moveCam = false;
                 timer = 0f;
