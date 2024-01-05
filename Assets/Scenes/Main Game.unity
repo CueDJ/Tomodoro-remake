@@ -367,7 +367,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 82762197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714131388}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
+        m_MethodName: PlusFiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &82762197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,7 +1144,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 665898992}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714131388}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
+        m_MethodName: ZeroButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &665898992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,6 +2118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714131387}
   - component: {fileID: 1714131386}
+  - component: {fileID: 1714131388}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2115,10 +2140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anchors:
   - {fileID: 7715350}
-  oldAnchors:
-  - {fileID: 87925723}
-  perc: 0
-  timer: 0
   timerDuation: 2
   player: {fileID: 2124223275}
 --- !u!4 &1714131387
@@ -2137,6 +2158,22 @@ Transform:
   - {fileID: 7715350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714131388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714131385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185b34c708c4a6c4d9ea1f92a5a18b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerActive: 0
+  timer:
+  - 0
+  - 0
 --- !u!1 &1792161411
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2256,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1792161414}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714131388}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
+        m_MethodName: PlusTenButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1792161414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2340,7 +2389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1996211544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714131388}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
+        m_MethodName: StopTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1996211544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,7 +2522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2012296021}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714131388}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2012296021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,8 +2584,9 @@ GameObject:
   - component: {fileID: 2024053207}
   - component: {fileID: 2024053209}
   - component: {fileID: 2024053208}
+  - component: {fileID: 2024053210}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Timer text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2634,6 +2708,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024053206}
   m_CullTransparentMesh: 1
+--- !u!114 &2024053210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024053206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f9cee84cc560fe4a96214be8669239d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerScript: {fileID: 1714131388}
+  text: {fileID: 2024053208}
 --- !u!1 &2072417122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,7 +2938,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2085966568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1714131388}
+        m_TargetAssemblyTypeName: TimerScript, Assembly-CSharp
+        m_MethodName: TwentyFiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2085966568
 MonoBehaviour:
   m_ObjectHideFlags: 0

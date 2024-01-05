@@ -49,11 +49,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.name == "TimerEntrance")
         {
-            Debug.Log("TimerEntrance");
             gameObject.SetActive(false);
             mainTimerManager.TimerEntrance();
         }
-        Debug.Log(other.gameObject.name);
+        else { Debug.Log("Error: Trigger not found"); }
     }
 
 }

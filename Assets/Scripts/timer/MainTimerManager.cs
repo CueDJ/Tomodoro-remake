@@ -14,6 +14,8 @@ public class MainTimerManager : MonoBehaviour
     private float timer = 0f;
     [SerializeField] private float timerDuation = 1f;
     private float perc = 0f;
+    private TimerScript timerScript;
+    private bool inMenu = false;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class MainTimerManager : MonoBehaviour
         }
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
+        timerScript = GameObject.Find("GameManager").GetComponent<TimerScript>();
     }
     public void TimerEntrance()
     {
@@ -38,6 +41,7 @@ public class MainTimerManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         moveCam = true;
+
     }
 
     private void Update()
@@ -55,11 +59,32 @@ public class MainTimerManager : MonoBehaviour
                 {
                     button.interactable = true;
                 }
+                inMenu = true;
+            }
+        }
+        if (inMenu)
+        {
+            if (timerScript.timerActive)
+            {
+                for (int i = 1; i < 6; i++)
+                {
+                    buttons[i].interactable = false;
+                    buttons[0].interactable = true;
+                }
+            }
+            else
+            {
+                for (int i = 1; i < 6; i++)
+                {
+                    buttons[i].interactable = true;
+                    buttons[0].interactable = false;
+                }
             }
         }
     }
     public void Return()
     {
+        inMenu = false;
         foreach (Button button in buttons)
         {
             button.interactable = false;
